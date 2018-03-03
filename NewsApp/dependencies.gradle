@@ -1,0 +1,73 @@
+ext {
+    support = '27.1.0'
+
+    gson = '2.7'
+    rxJava = '2.1.0'
+    rxBinding = '0.4.0'
+    rxAndroid = '2.0.1'
+
+    retrofit = '2.3.0'
+    okHttp3 = '3.4.0'
+    squareConverterGson = '2.1.0'
+
+    dataBinding = '3.1.0-alpha03'
+
+    dagger = '2.11'
+
+    robolectric = '3.4.2'
+    robolectricAnnotations = '3.0'
+    robolectricSupport = '3.0'
+    picassoVersion = '2.5.2'
+    mockWebServerVersion = '3.8.1'
+
+    guavaVersion  = '20.0'
+    constraintLayoutVersion = '1.0.2'
+
+    mockito = '2.13.0'
+    mockitoKotlin = '0.7.0'
+
+
+    dependencies = [
+
+            rxBinding                  : "com.jakewharton.rxbinding:rxbinding:$rxBinding",
+            rxAndroid                  : "io.reactivex.rxjava2:rxandroid:$rxAndroid",
+            rxJava                     : "io.reactivex.rxjava2:rxjava:$rxJava",
+
+            googleGson                 : "com.google.code.gson:gson:$gson",
+
+            mockWebServer              : "com.squareup.okhttp3:mockwebserver:$mockWebServerVersion",
+            squareLogging              : "com.squareup.okhttp3:logging-interceptor:$okHttp3",
+            squareRetrofit             : "com.squareup.retrofit2:retrofit:$retrofit",
+            squareRxAdapter            : "com.squareup.retrofit2:adapter-rxjava2:$retrofit",
+            squareConverterGson        : "com.squareup.retrofit2:converter-gson:$squareConverterGson",
+
+
+            dataBindingCompiler        : "com.android.databinding:compiler:$dataBinding",
+
+            supportAppCompact          : "com.android.support:appcompat-v7:$support",
+            supportRecyclerView        : "com.android.support:recyclerview-v7:$support",
+            supportCardView            : "com.android.support:cardview-v7:$support",
+            suppportDesign             : "com.android.support:design:$support",
+
+            constraintLayout           : "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
+
+            squareOkHttp               : "com.squareup.okhttp3:okhttp:$okHttp3",
+
+            daggerCompiler             : "com.google.dagger:dagger-compiler:$dagger",
+            dagger                     : "com.google.dagger:dagger:$dagger",
+            daggerAndroid              : "com.google.dagger:dagger-android:$dagger",
+            daggerAndroidSupport       : "com.google.dagger:dagger-android-support:$dagger",
+            daggerAndroidProcessor     : "com.google.dagger:dagger-android-processor:$dagger",
+
+            testRobolectric            : "org.robolectric:robolectric:$robolectric",
+            testRobolectricAnnotations : "org.robolectric:robolectric-annotations:$robolectricAnnotations",
+            testRobolectricSupport     : "org.robolectric:shadows-support-v4:$robolectricSupport",
+
+            testMockito               : "org.mockito:mockito-core:$mockito",
+            testMockitoKoltin         : "com.nhaarman:mockito-kotlin:$mockitoKotlin",
+
+            picassoCompiler            : "com.squareup.picasso:picasso:$picassoVersion",
+            guava                      : "com.google.guava:guava:$guavaVersion"
+
+    ]
+}
