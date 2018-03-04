@@ -2,6 +2,7 @@ package com.amandalacanna.newsapp.features.news
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import android.widget.Toast
 import com.amandalacanna.newsapp.R
@@ -82,6 +83,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initListView() {
         list_repository.layoutManager = list_repository.layoutManager
+        (list_repository.layoutManager as GridLayoutManager).spanCount = 2
+
         list_repository.adapter = newsAdapter
         list_repository.addOnScrollListener(EndlessScroll(viewModel))
     }
