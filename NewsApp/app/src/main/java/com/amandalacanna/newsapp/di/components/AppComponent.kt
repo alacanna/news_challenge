@@ -5,6 +5,7 @@ import com.amandalacanna.newsapp.application.NewsApplication
 import com.amandalacanna.newsapp.di.modules.ActivityModule
 import com.amandalacanna.newsapp.di.modules.ApiModule
 import com.amandalacanna.newsapp.di.modules.AppModule
+import com.amandalacanna.newsapp.features.news.adapter.NewsAdapter
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -12,9 +13,10 @@ import javax.inject.Singleton
 
 
 @Singleton
-@Component(modules = [(AndroidInjectionModule::class), (AppModule::class), (ActivityModule::class), (ApiModule::class)])
+@Component(modules = [(AndroidInjectionModule::class), (AppModule::class), (ActivityModule::class),(ApiModule::class)])
 interface AppComponent {
     fun inject(application: NewsApplication)
+    fun inject(newsAdapter: NewsAdapter)
 
     @Component.Builder
     interface Builder {
