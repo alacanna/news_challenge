@@ -1,7 +1,8 @@
-package com.amandalacanna.newsapp
+package com.amandalacanna.newsapp.features.news
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.amandalacanna.newsapp.R
 
 class MainActivity : AppCompatActivity() {
 

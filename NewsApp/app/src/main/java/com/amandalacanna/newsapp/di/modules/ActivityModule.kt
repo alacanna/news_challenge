@@ -1,6 +1,6 @@
 package com.amandalacanna.newsapp.di.modules
 
-import com.amandalacanna.newsapp.MainActivity
+import com.amandalacanna.newsapp.features.news.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

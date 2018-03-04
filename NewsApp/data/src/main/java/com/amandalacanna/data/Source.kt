@@ -1,3 +1,5 @@
 package com.amandalacanna.data
 
-data class Source (val id: Long?, val name: String?)
+import java.io.Serializable
+
+data class Source (val id: Long?, val name: String?): Serializable
