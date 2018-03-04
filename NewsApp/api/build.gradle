@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 27
@@ -22,6 +24,7 @@ android {
         }
     }
 
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/resources'] } }
 }
 
 dependencies {
@@ -55,4 +58,8 @@ dependencies {
     implementation dependencies.squareRxAdapter
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+repositories {
+    mavenCentral()
 }
