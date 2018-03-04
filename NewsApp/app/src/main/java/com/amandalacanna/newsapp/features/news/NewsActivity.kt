@@ -15,7 +15,7 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class NewsActivity : AppCompatActivity() {
     @Inject
     lateinit var viewModel: NewsViewModel
 
