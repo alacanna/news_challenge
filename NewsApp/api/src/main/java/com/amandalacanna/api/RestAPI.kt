@@ -35,7 +35,7 @@ class RestAPI(httpUrl: HttpUrl? = HttpUrl.parse(BuildConfig.SERVICE_URL)) {
             .client(httpClient.build())
             .build()
 
-    val repositoryRequest: NewsRequest by lazy {
+    val newsRequest: NewsRequest by lazy {
         retrofit.create(NewsRequest::class.java)
     }
 }
