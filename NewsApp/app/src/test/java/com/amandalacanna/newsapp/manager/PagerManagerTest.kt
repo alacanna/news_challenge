@@ -5,17 +5,13 @@ import org.junit.Test
 
 class PagerManagerTest {
 
-    var pagerManager: PagerManager = PagerManager(50)
+    val pagerManager: PagerManager = PagerManager(50)
 
     @Test
     fun shouldGoToNextPage() {
-
         Assert.assertEquals(1, pagerManager.nextPage())
-
         Assert.assertEquals(2, pagerManager.nextPage())
-
         Assert.assertEquals(3, pagerManager.nextPage())
-
     }
 
     @Test

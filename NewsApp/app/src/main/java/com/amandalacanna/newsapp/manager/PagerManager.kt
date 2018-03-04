@@ -19,23 +19,29 @@ open class PagerManager (var totalResults: Int = 0) {
 
     fun nextPage(): Int {
         return when {
-            _page <= maxPage -> {
+            _page == 0 -> {
+                _page = INITIAL_PAGE.plus(1)
+                _page
+            }
+            _page < maxPage -> {
                 ++_page
             }
-            _page > maxPage -> {
-                RESULT_FINISH_PAGES
-            }
             else -> {
-                INITIAL_PAGE.plus(1)
+                _page = RESULT_FINISH_PAGES
+                _page
             }
         }
     }
 
     fun previousPage(): Int {
-        return if (_page > 0 ) {
-            --_page
-        } else {
-            INITIAL_PAGE
+        return when {
+            _page > 0 -> {
+                --_page
+            }
+            else -> {
+                _page = INITIAL_PAGE
+                _page
+            }
         }
     }
 }
