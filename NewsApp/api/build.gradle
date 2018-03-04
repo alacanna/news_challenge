@@ -7,6 +7,7 @@ android {
 
     defaultConfig {
         buildConfigField "String", "SERVICE_URL", "\"https://newsapi.org/\""
+        buildConfigField "String", "NEWS_API_KEY", "\"31f79cd9b6094fb1b62501ac4962dfde\""
 
         minSdkVersion 19
         targetSdkVersion 27
