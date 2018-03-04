@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="3dp"
         app:cardElevation="3dp"
+        android:background="@android:color/white"
         android:layout_margin="5dp">
 
 
@@ -49,7 +50,6 @@
                 app:layout_constraintStart_toStartOf="@+id/txt_repository_name"
                 app:layout_constraintTop_toBottomOf="@+id/txt_repository_name"
                 tools:text="@string/txt_article_description" />
-
 
             <View
                 android:id="@+id/view"

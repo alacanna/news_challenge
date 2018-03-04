@@ -8,13 +8,16 @@ import android.os.Parcelable
 import com.amandalacanna.newsapp.R
 import android.databinding.DataBindingUtil
 import com.amandalacanna.data.Article
+import com.amandalacanna.data.extensions.formatDate
 import com.amandalacanna.newsapp.databinding.ActivityDetailBinding
+import com.amandalacanna.newsapp.extensions.color
+import com.amandalacanna.newsapp.extensions.isVisible
 import com.squareup.picasso.Picasso
 import dagger.android.AndroidInjection
 
 class DetailActivity : AppCompatActivity() {
     companion object {
-        private val EXTRA_ARTICLE = "article"
+        private const val EXTRA_ARTICLE = "article"
 
         fun startIntent(context: Context, parcelable: Parcelable?): Intent {
             return Intent(context, DetailActivity::class.java)
@@ -33,7 +36,30 @@ class DetailActivity : AppCompatActivity() {
             article ->
             binding.article = article
             setImage(article, binding)
+            setDate(article, binding)
+            setAuthor(article, binding)
+
         }
+    }
+
+    private fun setAuthor(article: Article, binding: ActivityDetailBinding) {
+        article.author?.let {
+            val authorLabel = "Author ".color(R.color.colorPrimary, this)
+            val author = article.author.color(R.color.colorPrimary, this)
+
+            binding.txtAuthorName.text = authorLabel
+            binding.txtAuthorName.append(author)
+        } ?: binding.txtAuthorName.isVisible(false)
+    }
+
+    private fun setDate(article: Article, binding: ActivityDetailBinding) {
+        article.publishedAt?.let {
+            val pubishedAtLabel = "Published at ".color(R.color.colorAccent, this)
+            val pubishedAt = article.publishedAt?.formatDate.color(R.color.colorAccent, this)
+
+            binding.txtArticleDate.text = pubishedAtLabel
+            binding.txtArticleDate.append(pubishedAt)
+        }?: binding.txtArticleDate.isVisible(false)
     }
 
     private fun setImage(article: Article, binding: ActivityDetailBinding) {

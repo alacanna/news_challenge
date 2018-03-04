@@ -12,92 +12,128 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@android:color/white"
         tools:context="com.amandalacanna.newsapp.features.detail.DetailActivity">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
+>
 
             <ImageView
                 android:id="@+id/img_article"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintDimensionRatio="w,1:1"
+                android:layout_marginTop="6dp"
+                android:contentDescription="@string/user_picture_description"
+                app:layout_constraintDimensionRatio="h,1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/txt_source_name"
-                style="@style/AppTheme.WhiteMediumStyle"
+                style="@style/AppTheme.PinkMediumStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:background="@color/background_news_stripe"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
-                android:padding="15dp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_article"
+                android:text="@{article.source.name}"
                 app:layout_constraintDimensionRatio=""
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_article"
-                tools:text="@string/txt_source_name"
-                android:text="@{article.source.name}"
-                />
+                tools:text="@string/txt_source_name" />
 
-
-            <TextView
-                android:id="@+id/txt_article_description"
-                style="@style/Base.TextAppearance.AppCompat.Small"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+            <View
+                android:id="@+id/view_separator_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="@+id/txt_source_name"
-                app:layout_constraintStart_toStartOf="@+id/txt_source_name"
-                app:layout_constraintTop_toBottomOf="@+id/txt_source_name"
-                tools:text="@string/txt_article_description"
-                android:text="@{article.description}"
-                />
-
-
-            <TextView
-                android:id="@+id/txt_author_name"
-                style="@style/Base.TextAppearance.AppCompat.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintDimensionRatio="w,1:1"
+                android:background="@color/graySeparator"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_article_description"
-                tools:text="Author: Amanda Lacanna"
-                android:text="@{article.author}"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/txt_source_name" />
 
-
-            <TextView
-                android:id="@+id/txt_article_date"
-                style="@style/Base.TextAppearance.AppCompat.Small"
-                android:layout_width="0dp"
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_author_name"
-                tools:text="Date: 2 Days ago" />
+                app:layout_constraintTop_toBottomOf="@+id/view_separator_1">
+
+                <TextView
+                    android:id="@+id/txt_article_description"
+                    style="@style/Base.TextAppearance.AppCompat.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@{article.description}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/txt_article_description" />
 
 
+                <View
+                    android:id="@+id/view_separator_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/graySeparator"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_article_description" />
+
+                <TextView
+                    android:id="@+id/txt_author_name"
+                    style="@style/AppTheme.SmallBlueTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/ic_face_black_24dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_separator_2"
+                    tools:text="Author: Amanda Lacanna" />
+
+
+                <TextView
+                    android:id="@+id/txt_article_date"
+                    style="@style/AppTheme.PinkSmallStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/ic_access_time_pink_24dp"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_author_name"
+                    tools:text="Published at " />
+
+            </android.support.constraint.ConstraintLayout>
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </layout>
