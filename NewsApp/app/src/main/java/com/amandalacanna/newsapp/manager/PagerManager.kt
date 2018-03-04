@@ -2,7 +2,7 @@ package com.amandalacanna.newsapp.manager
 
 const val PAGE_SIZE = 10
 
-open class PagerManager (var totalResults: Int) {
+open class PagerManager (var totalResults: Int = 0) {
     private val INITIAL_PAGE = 0
     private val RESULT_FINISH_PAGES = -1
 
@@ -18,10 +18,16 @@ open class PagerManager (var totalResults: Int) {
     }
 
     fun nextPage(): Int {
-        return if ((_page < maxPage)) {
-            ++_page
-        } else {
-            RESULT_FINISH_PAGES
+        return when {
+            _page <= maxPage -> {
+                ++_page
+            }
+            _page > maxPage -> {
+                RESULT_FINISH_PAGES
+            }
+            else -> {
+                INITIAL_PAGE.plus(1)
+            }
         }
     }
 

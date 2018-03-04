@@ -19,6 +19,13 @@ class PagerManagerTest {
     }
 
     @Test
+    fun shouldStartToInicialPage() {
+        pagerManager.totalResults = 0
+        Assert.assertEquals(1, pagerManager.nextPage())
+    }
+
+
+    @Test
     fun shouldStopInMaxPage() {
         pagerManager.nextPage()
         pagerManager.nextPage()
