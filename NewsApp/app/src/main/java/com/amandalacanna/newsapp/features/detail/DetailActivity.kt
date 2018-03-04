@@ -44,7 +44,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setAuthor(article: Article, binding: ActivityDetailBinding) {
         article.author?.let {
-            val authorLabel = "Author ".color(R.color.colorPrimary, this)
+            val authorLabel = "Author ".color(R.color.colorPrimary, this, true)
             val author = article.author.color(R.color.colorPrimary, this)
 
             binding.txtAuthorName.text = authorLabel
@@ -54,7 +54,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setDate(article: Article, binding: ActivityDetailBinding) {
         article.publishedAt?.let {
-            val pubishedAtLabel = "Published at ".color(R.color.colorAccent, this)
+            val pubishedAtLabel = "Published at ".color(R.color.colorAccent, this, true)
             val pubishedAt = article.publishedAt?.formatDate.color(R.color.colorAccent, this)
 
             binding.txtArticleDate.text = pubishedAtLabel

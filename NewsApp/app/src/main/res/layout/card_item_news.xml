@@ -20,17 +20,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="3dp"
             >
 
             <TextView
                 android:id="@+id/txt_repository_name"
-                style="@style/AppTheme.PinkMediumStyle"
+                style="@style/AppTheme.BlueMediumStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
+                android:padding="5dp"
+                android:background="@color/grayText"
+                android:textColor="@android:color/white"
                 android:text="@{article.source.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -38,49 +38,33 @@
                 tools:text="@string/txt_source_name" />
 
             <TextView
-                android:id="@+id/txt_repository_description"
+                android:id="@+id/txt_article_description"
                 style="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:lines="3"
-                android:maxLines="3"
                 android:text="@{article.description}"
                 app:layout_constraintEnd_toEndOf="@+id/txt_repository_name"
                 app:layout_constraintStart_toStartOf="@+id/txt_repository_name"
                 app:layout_constraintTop_toBottomOf="@+id/txt_repository_name"
                 tools:text="@string/txt_article_description" />
 
-            <View
-                android:id="@+id/view"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/grayText"
-                app:layout_constraintBottom_toTopOf="@+id/txt_label_username"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_repository_description" />
-
             <TextView
-                android:id="@+id/txt_label_username"
-                style="@style/AppTheme.SmallBlueTextStyle"
+                android:id="@+id/txt_url"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginBottom="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="@{article.url}"
+                android:layout_marginTop="15dp"
+                android:gravity="left"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/txt_article_description"
                 tools:text="https://newsapi.org/" />
 
         </android.support.constraint.ConstraintLayout>
