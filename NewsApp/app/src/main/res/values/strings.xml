@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">NewsApp</string>
+
+    <string name="txt_source_name">Source Name</string>
+    <string name="txt_article_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Donec eleifend condimentum ornare. Proin condimentum odio eget laoreet interdum.
+        Praesent mattis interdum eros vel euismod. Vestibulum a finibus augue. In tempus ante sit amet porttitor auctor.
+        Proin est ipsum, elementum quis nibh in, commodo porta justo. Ut ut facilisis erat. Duis placerat facilisis leo, at congue nisl.
+        Pellentesque fringilla ornare leo eu auctor.
+    </string>
+    <string name="user_picture_description">User photo</string>
+
+    <string name="default_error_connection">Ops, ocorreu um erro com a conexão, tente novamente.</string>
 </resources>
