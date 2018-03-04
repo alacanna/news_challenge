@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -23,11 +25,46 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:27.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    Map<String, String> dependencies = rootProject.ext.dependencies
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    kapt dependencies.dataBindingCompiler
+
+    /* tests and mocks */
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testImplementation dependencies.testMockitoKoltin
+    testImplementation dependencies.testMockito
+
+    /* android and support */
+    implementation dependencies.constraintLayout
+    implementation dependencies.supportAppCompact
+    implementation dependencies.supportCardView
+    implementation dependencies.suppportDesign
+
+    /* rx */
+    implementation dependencies.rxAndroid
+    implementation dependencies.rxJava
+
+    /* image loader */
+    implementation dependencies.picassoCompiler
+
+    /* gson */
+    implementation dependencies.googleGson
+
+    /* retrofit and Okhttp */
+    implementation dependencies.squareOkHttp
+
+    /* dagger */
+    kapt dependencies.daggerCompiler
+    kapt dependencies.daggerAndroidProcessor
+    implementation dependencies.dagger
+    implementation dependencies.daggerAndroid
+    implementation dependencies.daggerAndroidSupport
+
+    /* modules */
+    implementation project(':api')
+    implementation project(':data')
 }

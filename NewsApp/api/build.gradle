@@ -4,6 +4,8 @@ android {
     compileSdkVersion 27
 
     defaultConfig {
+        buildConfigField "String", "SERVICE_URL", "\"https://newsapi.org/\""
+
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
@@ -39,7 +41,7 @@ dependencies {
     implementation dependencies.supportAppCompact
 
     /* modules */
- //   implementation project(':data')
+    implementation project(':data')
 
     /* rx */
     implementation dependencies.rxAndroid
