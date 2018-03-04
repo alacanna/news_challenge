@@ -1,4 +1,4 @@
-package com.amandalacanna.newsapp
+package com.amandalacanna.newsapp.extensions
 
 import android.view.View
 

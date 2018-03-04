@@ -11,4 +11,5 @@
     <string name="user_picture_description">User photo</string>
 
     <string name="default_error_connection">Ops, ocorreu um erro com a conexão, tente novamente.</string>
+    <string name="str_placeholder_message">Ops an error ocurred.  Click to try again</string>
 </resources>

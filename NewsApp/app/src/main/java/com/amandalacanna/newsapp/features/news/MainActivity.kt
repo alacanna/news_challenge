@@ -8,7 +8,7 @@ import android.widget.Toast
 import com.amandalacanna.newsapp.R
 import com.amandalacanna.newsapp.features.news.adapter.NewsAdapter
 import com.amandalacanna.newsapp.features.news.viewmodel.NewsViewModel
-import com.amandalacanna.newsapp.isVisible
+import com.amandalacanna.newsapp.extensions.isVisible
 import com.amandalacanna.newsapp.view.listeners.EndlessScroll
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
