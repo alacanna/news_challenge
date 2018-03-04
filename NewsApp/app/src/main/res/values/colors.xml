@@ -6,4 +6,6 @@
 
     <color name="grayText">#55555B</color>
     <color name="grayBackground">#F0F0F0</color>
+    <color name="background_news_stripe">#99000000</color>
+
 </resources>

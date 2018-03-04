@@ -11,6 +11,8 @@ class NewsViewHolder (private val binding: CardItemNewsBinding, private val view
     }
 
     fun clickListener(article: Article) {
-        binding.root.setOnClickListener { viewModel.clickNews(article) }
+        binding.root.setOnClickListener {
+            viewModel.clickNews(article)
+        }
     }
 }

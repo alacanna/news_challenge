@@ -1,5 +1,9 @@
 package com.amandalacanna.data
 
-import java.io.Serializable
+import android.annotation.SuppressLint
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class Source (val id: String?, val name: String?): Serializable
+@Parcelize
+@SuppressLint("ParcelCreator")
+data class Source (val id: String?, val name: String?): Parcelable

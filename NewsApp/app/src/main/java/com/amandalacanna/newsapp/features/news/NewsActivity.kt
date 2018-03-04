@@ -2,13 +2,13 @@ package com.amandalacanna.newsapp.features.news
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import android.widget.Toast
 import com.amandalacanna.newsapp.R
 import com.amandalacanna.newsapp.features.news.adapter.NewsAdapter
 import com.amandalacanna.newsapp.features.news.viewmodel.NewsViewModel
 import com.amandalacanna.newsapp.extensions.isVisible
+import com.amandalacanna.newsapp.features.detail.DetailActivity
 import com.amandalacanna.newsapp.view.listeners.EndlessScroll
 import dagger.android.AndroidInjection
 import io.reactivex.disposables.CompositeDisposable
@@ -23,16 +23,6 @@ class NewsActivity : AppCompatActivity() {
     lateinit var newsAdapter: NewsAdapter
 
     private val disposables by lazy { CompositeDisposable() }
-
-    private val txtPlaceHolder by lazy {
-        txt_place_holder.setOnClickListener {
-            txt_place_holder.visibility = View.GONE
-            progressBar.visibility = View.VISIBLE
-            viewModel.getNews()
-        }
-
-        txt_place_holder
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -71,8 +61,8 @@ class NewsActivity : AppCompatActivity() {
         })
 
         val newsListenerDisposable = newsListener.subscribe {
-            repositoryData ->
-//           TODO goToAfterClick
+            articleSelected ->
+            startActivity(DetailActivity.startIntent(this@NewsActivity, articleSelected))
         }
 
         disposables.addAll(listArticlesDisposable,
@@ -83,8 +73,6 @@ class NewsActivity : AppCompatActivity() {
 
     private fun initListView() {
         list_repository.layoutManager = list_repository.layoutManager
-        (list_repository.layoutManager as GridLayoutManager).spanCount = 2
-
         list_repository.adapter = newsAdapter
         list_repository.addOnScrollListener(EndlessScroll(viewModel))
     }
