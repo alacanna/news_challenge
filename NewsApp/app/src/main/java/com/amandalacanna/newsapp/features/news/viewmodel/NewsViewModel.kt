@@ -1,5 +1,6 @@
 package com.amandalacanna.newsapp.features.news.viewmodel
 
+import android.util.Log
 import com.amandalacanna.api.request.NewsRequest
 import com.amandalacanna.data.Article
 import com.amandalacanna.newsapp.manager.PAGE_SIZE
@@ -67,9 +68,13 @@ open class NewsViewModel @Inject constructor(private val request: NewsRequest) :
                         {
                             pagerManager.totalResults = it.totalResults
                             listArticlesSubject.onNext(it.articles)
-                        }, { _ ->
-                    hasErrorSubject.onNext("Ops, an error occured!")
-                })
+                        },
+                        { error ->
+                            Log.e("getNews:Error", error.message)
+                            pagerManager.previousPage()
+                            hasErrorSubject.onNext("Ops, an error occured!")
+
+                        })
     }
 
     override fun clickNews(data: Article) {
