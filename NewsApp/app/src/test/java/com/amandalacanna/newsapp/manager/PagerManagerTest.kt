@@ -5,7 +5,7 @@ import org.junit.Test
 
 class PagerManagerTest {
 
-    val pagerManager: PagerManager = PagerManager(50)
+    private val pagerManager: PagerManager = PagerManager(50)
 
     @Test
     fun shouldGoToNextPage() {
